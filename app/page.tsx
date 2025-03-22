@@ -42,7 +42,7 @@ export default function Home() {
             className="underline duration-500 hover:text-zinc-300"
           >
             alpaca1rl AKA kelvin
-          </Link> is a former Twitch streamer turned back-end developer. With a strong foundation in back-end technologies,
+          </Link> a former Twitch streamer turned back-end developer. With a strong foundation in back-end technologies,
           he is now expanding his expertise into front-end development to become a well-rounded full-stack developer. 
           His background in streaming has honed his adaptability and problem-solving skills, 
           which he now applies to building efficient and scalable solutions in the tech world.
