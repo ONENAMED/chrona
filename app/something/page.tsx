@@ -2,13 +2,23 @@ import Link from "next/link";
 import React from "react";
 
 const navigation = [
-  { name: "Projects", href: "/projects" },
+  { name: "", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function Contact() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      {/* Back button linking to root page */}
+      <div className="absolute top-4 left-4 animate-fade-in">
+        <Link
+          href="/"
+          className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+        >
+          ← Back
+        </Link>
+      </div>
+
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
