@@ -35,14 +35,14 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500 ">
-          I'm building{" "}
+          I'm {" "}
           <Link
             target="_blank"
-            href="https://unkey.dev"
+            href="https://www.instagram.com/kelvin.kalvice/"
             className="underline duration-500 hover:text-zinc-300"
           >
-            unkey.dev
-          </Link> to solve API authentication and authorization for developers.
+            alpaca1rl AKA kelvin
+          </Link> is a former Twitch streamer turned back-end developer. With a strong foundation in back-end technologies, he is now expanding his expertise into front-end development to become a well-rounded full-stack developer. His background in streaming has honed his adaptability and problem-solving skills, which he now applies to building efficient and scalable solutions in the tech world.
         </h2>
       </div>
     </div>
