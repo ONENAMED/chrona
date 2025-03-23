@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -10,19 +10,25 @@ const navigation = [
 ];
 
 export default function Contact() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // Use motion values for real-time updates
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth the motion using a spring effect
+  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <>
@@ -41,15 +47,8 @@ export default function Contact() {
           pointerEvents: "none",
           filter: "blur(20px)",
           zIndex: 9999,
-        }}
-        animate={{
-          x: mousePosition.x - 50,
-          y: mousePosition.y - 50,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 50,
-          damping: 20,
+          x: springX,
+          y: springY,
         }}
       />
 
