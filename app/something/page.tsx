@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -11,7 +13,7 @@ export default function Contact() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const updateMousePosition = (e) => {
+    const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -34,7 +36,8 @@ export default function Contact() {
           width: "100px",
           height: "100px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)",
+          background:
+            "radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)",
           pointerEvents: "none",
           filter: "blur(20px)",
           zIndex: 9999,
@@ -80,13 +83,13 @@ export default function Contact() {
 
         {/* Gradient divs */}
         <div className="hidden md:block w-screen h-px animate-glow bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-        
+
         <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
           Contact
         </h1>
 
         <div className="hidden md:block w-screen h-px animate-glow bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-        
+
         <div className="my-16 text-center animate-fade-in">
           <h2 className="text-base md:text-lg text-zinc-400 leading-relaxed max-w-[90%] md:max-w-[60%] mx-auto">
             Let's connect! You can reach me through these channels:
@@ -119,4 +122,3 @@ export default function Contact() {
     </>
   );
 }
-
