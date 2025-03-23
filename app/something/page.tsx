@@ -5,8 +5,8 @@ import React, { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "", href: "/projects" },
+  { name: "", href: "/contact" },
 ];
 
 export default function Contact() {
