@@ -10,6 +10,7 @@ const navigation = [
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      {/* Existing navigation and content */}
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
@@ -46,7 +47,31 @@ export default function Home() {
           but better
         </h2>
       </div>
+
+      {/* New help button */}
+      <div className="fixed bottom-6 right-6 z-20">
+        <Link
+          href="/help"
+          className="bg-zinc-800/50 hover:bg-zinc-800/70 p-3 rounded-full transition-colors duration-300 text-zinc-300 hover:text-zinc-100 text-sm font-medium"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M8.228 9c.549-1.382 2.163-2.733 3.569-2.733 1.406 0 2.02.735 2.02 2.733 0 1.98-1.614 3.754-3.569 3.754-1.955 0-3.569-1.754-3.569-3.754zm0 6.756a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"
+            />
+          </svg>
+        </Link>
+      </div>
     </div>
   );
-
 }
+// Add any additional components or styles here
+// 
