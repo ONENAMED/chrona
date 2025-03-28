@@ -4,13 +4,18 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+export const metadata = {
+  title: "Contact | Kelvin ", // Dynamic title for this page
+  description: "Get in touch with Kelvin through email, LinkedIn, or Instagram",
+};
+
 const navigation = [
   { name: "", href: "/projects" },
   { name: "", href: "/contact" },
 ];
 
 export default function Contact() {
-  // Use motion values for real-time updates
+ // Use motion values for real-time updates
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
