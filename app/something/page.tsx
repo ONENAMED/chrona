@@ -10,11 +10,9 @@ const navigation = [
 ];
 
 export default function Contact() {
-  // Use motion values for real-time updates
+  // Cursor effect setup
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
-  // Smooth the motion using a spring effect
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
 
@@ -52,7 +50,7 @@ export default function Contact() {
         }}
       />
 
-      {/* Rest of your existing page content */}
+      {/* Page Content */}
       <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
         {/* Back button */}
         <div className="absolute top-4 left-4 animate-fade-in">
@@ -120,4 +118,26 @@ export default function Contact() {
       </div>
     </>
   );
+}
+
+// Dynamic metadata with title
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Contact | Kelvin Kalvice",
+    description: "Get in touch with Kelvin through email, LinkedIn, or Instagram",
+    openGraph: {
+      title: "Contact | Kelvin Kalvice",
+      description: "Connect with Kelvin Kalvice on social media and email",
+      url: "https://yourdomain.com/contact",
+      type: "website",
+      images: [
+        {
+          url: "https://yourdomain.com/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Contact Kelvin Kalvice"
+        }
+      ]
+    }
+  };
 }
