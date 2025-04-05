@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
